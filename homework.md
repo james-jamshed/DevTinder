@@ -1,0 +1,11 @@
+-Create a repository
+-Initialize the repository
+-Node_mmodules,package.json,package-lock.json
+-Install express
+-Create Server
+-Listern to port 3000
+-Write request handler for/test, /hello
+-Install nodemon and update scripts inside    package.json
+-What is the use of "-g" while npm istall
+-Difference between caret and tilde (^ vs ~)
+vgit branch
