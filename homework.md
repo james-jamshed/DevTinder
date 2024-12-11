@@ -1,3 +1,4 @@
+-H.W-1
 -Create a repository
 -Initialize the repository
 -Node_mmodules,package.json,package-lock.json
@@ -8,5 +9,3 @@
 -Install nodemon and update scripts inside    package.json
 -What is the use of "-g" while npm istall
 -Difference between caret and tilde (^ vs ~)
-
-fd vfn mdvccnef dnk vdcx
