@@ -37,3 +37,6 @@
 -Install Mongoose libary
 -Connect Your Applicvation to the Database <"Connection-url"/devTinder>
 -Call the connectedDB function and connect to database before starting application 3000
+-Create A User Schema & user MOdels
+-Crearte POST/Sigup API to add data to dataabse
+-Push some document using API calls from Postman
