@@ -1,25 +1,19 @@
 const express = require("express");
-
+const connectDB =require("./config/database")
 const app = express();
-app.get("/getUserData",(rew,res)=>{
 
-    
-    throw new Error("gnhbfhrbd")
+connectDB()
+.then(()=>{
+    console.log("DataBase connection is succesfully.....");
+    app.listen(3000,()=>{
+        console.log("server is successfully listening on port 3000.......");
+        
+    });
     
 
-    res.send("User Data Sent")
+}).catch(err=>{
+    console.error("Database connot be  connected....")
+
 });
 
-app.use("/",(err,req,res,next)=>{
-    if(err){
-        //log your error
-        res.status(500).send("something went wrong");
-    }
-});
 
-
-
-app.listen(3000,()=>{
-    console.log("server is successfully listening on port 3000.......");
-    
-});
