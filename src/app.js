@@ -1,21 +1,20 @@
 const express = require("express");
 
 const app = express();
-const {adminAuth ,UserAuth}= require("./middlewares/auth");
+app.get("/getUserData",(rew,res)=>{
 
+    
+    throw new Error("gnhbfhrbd")
+    
 
-app.use("/admin",adminAuth);
-app.get("/user",UserAuth,(req,res)=>{
-    res.send("User Data Sent");
+    res.send("User Data Sent")
 });
 
-app.get("/admin/getAllData",(req,res)=>{
-    res.send("All Data Sent");
-});
-
-app.get("/admin/deleteUser",(req,res)=>{
-  
-    res.send("Delete a User");
+app.use("/",(err,req,res,next)=>{
+    if(err){
+        //log your error
+        res.status(500).send("something went wrong");
+    }
 });
 
 
