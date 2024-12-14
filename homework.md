@@ -49,3 +49,4 @@
 -User.findOne() with duplicate email ids, which one will return
 -API Get user by email
 -API -FEED API-GET/feed -get all the users from the database
+-API -Get user byID
