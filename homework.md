@@ -40,3 +40,9 @@
 -Create A User Schema & user MOdels
 -Crearte POST/Sigup API to add data to dataabse
 -Push some document using API calls from Postman
+
+
+
+-Diffrenece between Javascript and JSON
+-Add the express.json middleware to your app
+-Make your signup API dynamic to recive data from the user
