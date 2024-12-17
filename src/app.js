@@ -12,7 +12,7 @@ app.post("/signup",async (req,res)=>{
         await user.save();
         res.send("User Added succesfully")
     } catch(err){
-        res.status(400).send("Error saving the user:+ err.message ");
+        res.status(400).send("Error saving the user:"+err.message);
     }
 
    
@@ -98,5 +98,3 @@ connectDB()
     console.error("Database connot be  connected....")
 
 });
-
-

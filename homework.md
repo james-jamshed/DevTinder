@@ -55,4 +55,4 @@
 -API- Update auser
 -Explore the mongoose Documentation for model Methods
 -What are option in a model.fondeAndUpdate method , explore more about it
--api- Update the User with EmailID
+-API- Update the User with EmailID
