@@ -56,4 +56,10 @@
 -Explore the mongoose Documentation for model Methods
 -What are option in a model.fondeAndUpdate method , explore more about it
 -API- Update the User with EmailID
--waittt
+
+
+-Explore Schematypes option from the document
+-ass required, unique lowercase, min, minlength,trim-Add default
+-Create a custom validate function for gender
+-Improve the DB Schema -Putt all required appropiate validation on each filed in Schema
+-Add timestamps to the userSchema
