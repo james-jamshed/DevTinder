@@ -16,7 +16,7 @@ app.post("/signup",async (req,res)=>{
     }
 
    
-
+ 
 });
 
 //Get user by email
