@@ -65,3 +65,5 @@
 -Add timestamps to the userSchema
 -Add API Level validation on Patch request & Signup Post API
 -DATA SENITIZATION-Add API validation for each filed
+-Install Validator
+-Use Validator library Function to Explore other Validation like password ,PhotoUrl,
