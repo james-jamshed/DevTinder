@@ -67,4 +67,13 @@
 -DATA SENITIZATION-Add API validation for each filed
 -Install Validator
 -Use Validator library Function to Explore other Validation like password ,PhotoUrl,
--Never Trust req.body
+-NEVER TRUST req.body
+
+
+
+
+-Validate data in Signup API
+-Install bcrypt package
+-Create PasswordHash Using bcrypt.hash & save the use in encrypted password
+-Create Login Api
+-Compare password and throw errors if email or password is invalid
