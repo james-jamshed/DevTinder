@@ -81,9 +81,17 @@
 
 
 
+**very imporatnt expsiode for Backend secure code**(ep-10)
+
+
 -Install cookie-parse
 -just send a dummy cookie to user
 -Create GET/Profile API and check If you get the cokkie back
 -INSTALL JSONwebToken
 -IN Login API, after email & pass validation Create a JWT token send it to user
 -read the cookies inside your Profile API, and find the logged in user
+-userAuth middleware
+-Add the userAuth middleware in profile API and a new SendConnectioRequest
+-Set the expiry of JWT token and cokkies to 7 days
+-Create User Schema Methods to getJWT()
+-Create UserSchema method to comparePassword(PasswordInputByUser)
