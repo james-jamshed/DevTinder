@@ -6,6 +6,7 @@ const { validateSignUpData} = require("./utils/validation");
 const bcrypt = require("bcrypt");
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
+const {UserAuth} = require("./middlewares/auth")
 
 app.use(express.json());
 app.use(cookieParser());
@@ -47,13 +48,10 @@ app.post("/login",async(req,res)=>{
         const ispasswordValid =await bcrypt.compare(password,user.password);
         if(ispasswordValid){
             //Create a JWT Token
-            // const token = await jwt.sign({_id: user._id},"DEV@Tinder$790");
-            // console.log(token);
+            const token = await jwt.sign({_id: user._id},"DEV@Tinder$790");
             
-
-
-            //ADD the Token to Cookis and serd the response back to the user
-            // res.cookie("token",token);
+            // ADD the Token to Cookis and serd the response back to the user
+            res.cookie("token",token);
             res.send("Login Successfull!!!!");  
         }
         else{
@@ -67,15 +65,13 @@ app.post("/login",async(req,res)=>{
 
 });
 
-app.get("/profile",async(req,res)=>{
-    const cookies  = req.cookies;
-
-    const {token} =cookies;
-    //Validate my token
-    
-    console.log(cookies);
-    res.send("reading cookies");
-    
+app.get("/profile",UserAuth,async(req,res)=>{
+   try{
+    const user = req.user;
+    res.send(user);
+   }catch(err){
+    res.status(400).send("Something went wrong")
+   }
 
 });
 
