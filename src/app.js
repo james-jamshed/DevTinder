@@ -42,16 +42,13 @@ app.post("/login",async(req,res)=>{
         const{emailId,password} = req.body;
         const user =await User.findOne({emailId:emailId});
         if(!user){
-            throw new Error("Invalid Credentials");
-            
+            throw new Error("Invalid Credentials");       
         }
-        const ispasswordValid =await bcrypt.compare(password,user.password);
+        const ispasswordValid =await user.validatePassword(password)
         if(ispasswordValid){
-            //Create a JWT Token
-            const token = await jwt.sign({_id: user._id},"DEV@Tinder$790");
-            
-            // ADD the Token to Cookis and serd the response back to the user
-            res.cookie("token",token);
+            const token = await user.getJWT();
+            res.cookie("token",token,{expires:new Date(Date.now() + 8* 360000),
+            });
             res.send("Login Successfull!!!!");  
         }
         else{
@@ -75,84 +72,16 @@ app.get("/profile",UserAuth,async(req,res)=>{
 
 });
 
-//Get user by email
-
-app.get("/user",async (req,res)=>{
-    const useremail = req.body.emailid;
-
-   try{
-     const users = await  User.find({emailid: useremail});
-     if(users.length ===0){
-        res.send(404).send("User not Wrong")
-     }
-     else{
-        res.send(users);
-
-     }
-
-   }
-   catch(err){
-    res.status(400).send("Something went wrong")
-   }
-
-});
-
-//Feed API -GET all the users from the database
-app.get("/feed",async (req,res)=>{
-
-    try{
-        const users = await User.find({});
-        res.send(users);
-
-    }
-    catch(err){
-        res.status(400).send("Something went wrong")
-       }
+app.post("/sendConnectionRequest",UserAuth,async (req,res)=>{
+    const user = req.user;
     
-});
-//Delete a user from database
+console.log("sending a connection Request");
+res.send(user.firstName+"send the connection request")
 
-app.delete("/user",async(req,res)=>{
-    const userId = req.body.userId;
-    try{
-        const user = await User.findByIdAndDelete(userId);
-        res.send("User deleteed sussessfully");
 
-    }
-    catch(err){
-        res.status(400).send("Something Went Wrong");
-    }
-});
 
-//updata data of the user
-app.patch("/user/:userId",async(req,res)=>{
-    const userId= req.params?.userId;
 
-    const data = req.body;
-    
-    try{
-        const ALLOWED_UPDATES =[
-            "photoUrl","about","gender","age","skills"
-        ];
-        const isUpdateAllowed= Object.keys(data).every(k =>
-            ALLOWED_UPDATES.includes(k)
-        )
-        // if(!isUpdateAllowed){
-        //     throw new Error("Update Not Allowed");
-               
-        // }
-        if(data?.skills.length > 5){
-            throw new Error("skills not more than 5");
-            
-        }
-        await User.findByIdAndUpdate({_id: userId},data);
-        res.send("user updated sucessfully");
 
-    }
-    catch(err){
-        res.status(400).send("Something Went Wrong");
-    }
-    
 });
 
 
