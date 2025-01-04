@@ -97,3 +97,9 @@
 -Set the expiry of JWT token and cokkies to 7 days
 -Create User Schema Methods to getJWT()
 -Create UserSchema method to comparePassword(PasswordInputByUser)
+
+
+
+-Explore tinder APIs
+-Create a List all API you can think of in DevTinder
+-Group multiple routes under respescives routers
