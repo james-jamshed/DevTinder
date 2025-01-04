@@ -103,3 +103,7 @@
 -Explore tinder APIs
 -Create a List all API you can think of in DevTinder
 -Group multiple routes under respescives routers
+-Read documentation for express.Router
+-Create routes folder for managing auth,profile,request roputers
+-create authRouter,profileRouter,requesstRouter
+-Import these routers in app.js
