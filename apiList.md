@@ -9,7 +9,7 @@
 ## profilerouter
 -GET /profile/view
 -PATCH /profile/edit
--PATCH /profile/paasword
+-PATCH /profile/paasword // Forgot password API (H.W)
 
 
 ## connectionRequestRouter
