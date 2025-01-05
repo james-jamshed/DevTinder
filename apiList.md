@@ -13,8 +13,8 @@
 
 
 ## connectionRequestRouter
--POST /request/send/intrested/:userId
--POST /request/send/ignore/:userId
+-POST /request/send/status/:userId (status : ignore and accept)
+
 -POST /request/review/accepted/:requestId
 -POST /request/review/rejected/:requestId
 

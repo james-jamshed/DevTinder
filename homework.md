@@ -111,3 +111,17 @@
 -Create PATCH /profile/edit
 -Create PATCH /profile/password API => forgot password API
 -Make you validate ,all API
+
+
+-Read this arcticle about compound index 
+-why you cannot crete index to every field read this and find soln
+-Read more about index inMongoDb
+-Why you need index
+-ADV and DISADV of index
+-Crete Connection req schema
+-send connection req api
+-Proper Validation of data
+-Think about more corner cases
+-read more about or and $ cases
+-schema.pre("save") function
+-alwayes think about corner cases
