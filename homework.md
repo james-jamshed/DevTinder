@@ -125,3 +125,7 @@
 -read more about or and $ cases
 -schema.pre("save") function
 -alwayes think about corner cases
+
+
+
+-Write code with proper validation for POST/request/revieww/:status/:requestId
