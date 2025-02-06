@@ -130,3 +130,5 @@
 
 -Write code with proper validation for POST/request/revieww/:status/:requestId
 -Thought process -POST vs GET
+-Read about resf and populate from doucumets
+-Create Get/user/request/recived   with all the core cases 

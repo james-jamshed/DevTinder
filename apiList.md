@@ -20,8 +20,8 @@
 
 
 ## userRouter
+-GET /user/request/recieved
 -GET /user/connections
--GET /user/request
 -GET /user/feed -Gets you the profile of others platform
 
 
