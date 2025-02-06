@@ -132,3 +132,4 @@
 -Thought process -POST vs GET
 -Read about resf and populate from doucumets
 -Create Get/user/request/recived   with all the core cases 
+-Create Get/user/status 
