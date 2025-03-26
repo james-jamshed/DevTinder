@@ -50,7 +50,7 @@ const userSchema =new mongoose.Schema({
     },
     photoUrl:{
         type: String,
-        default: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+        default: "https://pinnacle.works/wp-content/uploads/2022/06/dummy-image.jpg",
         validate(value){
             if(!validator.isURL(value)){
                 throw new Error("Invalid Email Address" + value);
