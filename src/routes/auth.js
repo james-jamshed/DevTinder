@@ -22,8 +22,12 @@ authRouter.post("/signup",async (req,res)=>{
         password:passwordHash,
      });
     
-        await user.save();
-        res.send("User Added succesfully")
+        const savedUser = await user.save();
+        const token = await savedUser.getJWT();
+        res.cookie("token", token, {
+            expires: new Date(Date.now() + 8 * 3600000),
+        });
+        res.json({ message: "User Added succesfully!", data: savedUser });
     } catch(err){
         res.status(400).send("Error saving the user:"+err.message);
     }
@@ -42,6 +46,8 @@ authRouter.post("/login",async(req,res)=>{
         const ispasswordValid =await user.validatePassword(password)
         if(ispasswordValid){
             const token = await user.getJWT();
+            res.cookie("token",token,{expires:new Date(Date.now() + 8* 360000),
+            });
             res.cookie("token",token,{expires:new Date(Date.now() + 8* 360000),
             });
             res.send(user);  
