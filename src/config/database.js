@@ -5,9 +5,9 @@ const connectDB = async()=>{
         process.env.DB_CONNECTION_SECRET,
         {
             useNewUrlParser: true,
-                useUnifiedTopology: true
+            useUnifiedTopology: true
         }
     );
 };
-module.exports =connectDB;
+module.exports = connectDB;
 
