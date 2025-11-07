@@ -36,11 +36,8 @@ connectDB()
 .then(()=>{
     console.log("DataBase connection is succesfully.....");
     app.listen(process.env.PORT,()=>{
-        console.log("server is successfully listening on port 3000.......");
-        
+        console.log("server is successfully listening on port 3000......."); 
     });
-    
-
 }).catch(err=>{
     console.error("Database connot be  connected....",err)
 
